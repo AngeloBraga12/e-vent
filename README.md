@@ -2,27 +2,35 @@
 
 Painel front-end para organização e acompanhamento de eventos, desenvolvido como projeto de portfólio.
 
-A aplicação demonstra uma interface de dashboard com dados em estado local, criação de eventos, busca, filtros por status e layout responsivo.
+A aplicação demonstra um dashboard responsivo com gerenciamento de eventos no navegador, indicadores derivados do estado, busca, filtros e formulários de criação e edição.
 
 ## Demonstração técnica
 
 - React + TypeScript
 - Vite
-- Componentização e estado com Hooks
-- Formulário com validação nativa
-- Busca e filtros derivados do estado
+- Hooks e estado derivado com `useState`, `useEffect` e `useMemo`
+- Persistência de dados com `localStorage`
+- Criação e edição de eventos
+- Exclusão com confirmação
+- Alteração de status diretamente na lista
+- Busca por evento ou local
+- Filtro por status
+- Validação nativa de formulário
 - Layout responsivo para desktop e mobile
-- Acessibilidade básica em navegação, formulário e controles
+- Controles com estados acessíveis e suporte a `Escape` para fechar o modal
 - GitHub Actions para validação TypeScript e build
 
 ## Funcionalidades
 
-- Resumo de eventos e participantes
+- Resumo de eventos, confirmações e participantes
 - Cadastro de novos eventos
-- Busca por evento ou local
-- Filtro por status
-- Lista responsiva de eventos
-- Interface sem backend, com dados mantidos em memória durante a sessão
+- Edição de eventos existentes
+- Exclusão de eventos
+- Ciclo de status: Planejado → Confirmado → Concluído → Planejado
+- Busca e filtros combináveis
+- Estado vazio quando nenhum resultado corresponde à pesquisa
+- Persistência local entre sessões no mesmo navegador
+- Interface responsiva
 
 ## Executar localmente
 
@@ -38,9 +46,20 @@ npm run lint
 npm run build
 ```
 
+## Estrutura
+
+```text
+src/
+├── App.tsx       # interface, estado e regras da aplicação
+├── main.tsx      # entrada do React
+└── styles.css    # layout e responsividade
+```
+
 ## Contexto
 
-Projeto criado para demonstrar evolução prática em desenvolvimento Web e Front-end, com foco em React, TypeScript, organização de código, interação com estado e construção de interfaces responsivas.
+Projeto criado para demonstrar evolução prática em desenvolvimento Web e Front-end, com foco em React, TypeScript, organização de código, gerenciamento de estado, persistência no navegador e construção de interfaces responsivas.
+
+Não há backend ou autenticação. Os dados são armazenados apenas no `localStorage` do navegador.
 
 ## Autor
 
